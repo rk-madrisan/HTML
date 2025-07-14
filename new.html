@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .alert-banner {
+            background-color: maroon;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        nav {
+            background-color: maroon;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: maroon;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .form-group label {
+            flex: 1;
+            min-width: 150px;
+            margin-right: 15px;
+            text-align: right;
+        }
+        
+        .form-group .input-container {
+            flex: 2;
+            min-width: 250px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .radio-group div, .checkbox-group div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        button, input[type="submit"], input[type="reset"] {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        
+        input[type="submit"] {
+            background-color: maroon;
+            color: white;
+        }
+        
+        input[type="reset"] {
+            background-color: #ddd;
+            color: #333;
+        }
+        
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .form-group label {
+                text-align: left;
+                margin-bottom: 5px;
+                flex: 100%;
+            }
+            
+            .form-group .input-container {
+                flex: 100%;
+            }
+        }
+        
+        .password-hint {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .floating-alert {
+            animation: floatBanner 2s infinite ease-in-out;
+        }
+        
+        @keyframes floatBanner {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-banner floating-alert">
+        APPLICATION CLOSED TODAY
+    </div>
+    
+    <nav>
+        <a href="file:///C:/rk%20mern/html/ipl%20table.html">HOME</a>
+        <a href="">COURSE</a>
+        <a href="">ABOUT</a>
+        <a href="">CONTACT</a>
+        <a href="">LOGIN</a>
+    </nav>
+    
+    <div class="form-container">
+        <h2>Student Application Form</h2>
+        <form action="/submit-application" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="uname">STUDENT NAME:</label>
+                <div class="input-container">
+                    <input type="text" name="uname" id="uname" placeholder="Enter your name" pattern="[a-zA-Z ]+" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">STUDENT ADDRESS:</label>
+                <div class="input-container">
+                    <textarea name="ADDRESS" id="address" placeholder="Enter your address" cols="30" rows="5" required></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="mail">STUDENT EMAIL:</label>
+                <div class="input-container">
+                    <input type="email" name="mail" id="mail" placeholder="Enter your email" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">DATE OF BIRTH:</label>
+                <div class="input-container">
+                    <input type="date" name="dob" id="dob" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="num">CONTACT NUMBER:</label>
+                <div class="input-container">
+                    <input type="tel" name="num" id="num" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>GENDER:</label>
+                <div class="input-container">
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" name="gender" id="M" value="male" required>
+                            <label for="M">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" id="F" value="female">
+                            <label for="F">Female</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" id="O" value="other">
+                            <label for="O">Other</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>SELECT IF REQUIRED:</label>
+                <div class="input-container">
+                    <div class="checkbox-group">
+                        <div>
+                            <input type="checkbox" name="hostel" id="hostel">
+                            <label for="hostel">HOSTEL</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="bus" id="bus">
+                            <label for="bus">BUS</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="food" id="food">
+                            <label for="food">FOOD</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="course">SELECT THE COURSE:</label>
+                <div class="input-container">
+                    <select name="course" id="course" required>
+                        <option value="">-- Select the course --</option>
+                        <option value="bA">BA</option>
+                        <option value="bsc">BSC</option>
+                        <option value="bcom">BCOM</option>
+                        <option value="bba">BBA</option>
+                        <option value="bca">BCA</option>
+                        <option value="mca">MCA</option>
+                        <option value="mcom">MCOM</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="resume">UPLOAD RESUME:</label>
+                <div class="input-container">
+                    <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="pass">SET PASSWORD:</label>
+                <div class="input-container">
+                    <input type="password" name="pass" id="pass" placeholder="Enter password" 
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$" required>
+                    <small class="password-hint">
+                        Password must be 8-20 characters and include at least one uppercase letter, one lowercase letter, one number and one special character
+                    </small>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <input type="submit" value="SUBMIT APPLICATION">
+                <input type="reset" value="CLEAR FORM">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

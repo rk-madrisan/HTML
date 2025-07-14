@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live wheather Broadcast</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #87ceeb, #ffffff);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .weather-container {
+      max-width: 400px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .weather-header h1 {
+      font-size: 2rem;
+      color: #0056b3;
+      margin: 0 0 10px;
+    }
+
+    .weather-main {
+      margin: 20px 0;
+    }
+
+    .weather-info h2 {
+      font-size: 3rem;
+      color: #ff8c00;
+      margin: 0;
+    }
+
+    .weather-info p {
+      font-size: 1.2rem;
+      margin: 5px 0 0;
+    }
+
+    .weather-details p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    .weather-footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+    <header class="weather-header">
+      <h1>Live Weather Broadcast</h1>
+      <p id="location">Location: Loading...</p>
+    </header>
+    <main class="weather-main">
+      <div class="weather-info">
+        <h2 id="temperature">--°C</h2>
+        <p id="condition">--</p>
+      </div>
+      <div class="weather-details">
+        <p><strong>Humidity:</strong> <span id="humidity">--%</span></p>
+        <p><strong>Wind Speed:</strong> <span id="wind">-- km/h</span></p>
+      </div>
+    </main>
+    <footer class="weather-footer">
+      <p>Updated at: <span id="update-time">--:--</span></p>
+    </footer>
+  </div>
+
+  <script>
+    async function fetchWeather() {
+      const apiKey = 'ee9cd432efd4771ae2cad35c52d4d050'; 
+      const city = 'tenkasi';
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("Weather data not available");
+
+        const data = await response.json();
+
+        
+        document.getElementById('location').textContent = `Location: ${data.name}, ${data.sys.country}`;
+        document.getElementById('temperature').textContent = `${Math.round(data.main.temp)}°C`;
+        document.getElementById('condition').textContent = data.weather[0].description;
+        document.getElementById('humidity').textContent = `${data.main.humidity}%`;
+        document.getElementById('wind').textContent = `${Math.round(data.wind.speed)} km/h`;
+        document.getElementById('update-time').textContent = new Date().toLocaleTimeString();
+      } catch (error) {
+        alert("Unable to fetch weather data. Please check your internet connection or API key.");
+      }
+    }
+
+    
+    fetchWeather();
+  </script>
+</body>
+</html>

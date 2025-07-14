@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+    <div style="display: flex;">
+        <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+            <img src="rk.png" alt="">
+            <a class="navbar-brand" href="#">RK'S CLUB</a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading1">First</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading2">Second</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                        <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+            data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+            <h4 id="scrollspyHeading1">First heading</h4>
+            <p>...</p>
+            <h4 id="scrollspyHeading2">Second heading</h4>
+            <p>...</p>
+            <h4 id="scrollspyHeading3">Third heading</h4>
+            <p>...</p>
+            <h4 id="scrollspyHeading4">Fourth heading</h4>
+            <p>...</p>
+            <h4 id="scrollspyHeading5">Fifth heading</h4>
+            <p>...</p>
+        </div>
+
+    </div>
+    <div style="display: flex;">
+        <div class="card text-bg-dark">
+            <img src="lamb.jpeg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">RK'S CLUB</h5>
+                <p class="card-text">we are speialist in to buying and selling new and second handed cars</p>
+                <p class="card-text"><small>scroll down for more details</small></p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="cards d-flex justify-content-around">
+
+        <div class="rows">
+            <div class="card" style="width: 18rem;">
+                <img src="SALES.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">SALES</h5>
+                    <p class="card-text">p Clean: Exterior wash, interior vacuum & sanitise. Professional detailing
+                        helps.
+
+                        Minor Fixes: Address small dents, scratches, broken lights for better value.
+
+                        Service History: Keep all service bills, they build buyer trust Address small dents, scratches,
+                        broken lights for better value.
+
+                        Service History: Keep all service bills, they build buyer trust..</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="rows">
+            <div class="card" style="width: 18rem;">
+                <img src="BUYING.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">BUYING</h5>
+                    <p class="card-text">Budgeting (Beyond Price Tag):
+
+                        On-Road Price: Includes ex-showroom, RTO (registration, road tax), insurance, accessories.
+
+                        Running Costs: Fuel, regular service, potential repairs, loan EMIs.
+
+                        New vs. Used:
+
+                        New: Latest features, warranty, peace of mind, but higher initial cost & faster depreciation.
+
+                        Used: More affordable, less depreciation, wider choice in budget. Consider Certified Pre-Owned
+                        for warranty/inspection.t.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="rows">
+            <div class="card" style="width: 18rem;">
+                <img src="SERVICES.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">SERVICES</h5>
+                    <p class="card-text">Safety: Ensures critical components (brakes, lights, tires) are safe.
+
+                        Performance: Maintains fuel efficiency, smooth engine operation.
+
+                        Longevity: Extends car's life, prevents major breakdowns.
+
+                        Resale Value: A full, documented service history significantly increases resale value.
+
+                        Warranty: Essential to maintain manufacturer warranty</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="SALES.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="BUYING.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="SERVICES.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

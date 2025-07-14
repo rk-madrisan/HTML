@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Like & Dislike Counter</title>
+  <style>
+    .button-container {
+      display: flex;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .like-btn, .dislike-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .like-btn {
+      background-color: #4CAF50;
+    }
+
+    .dislike-btn {
+      background-color: #f44336;
+    }
+
+    .count {
+      margin-left: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>React to this post:</h2>
+
+  <div class="button-container">
+    <button class="like-btn" onclick="likePost()">Like <span id="likeCount" class="count">0</span></button>
+    <button class="dislike-btn" onclick="dislikePost()">Dislike <span id="dislikeCount" class="count">0</span></button>
+  </div>
+
+  <script>
+    let likeCount = 0;
+    let dislikeCount = 0;
+
+    function likePost() {
+      likeCount++;
+      document.getElementById("likeCount").innerText = likeCount;
+    }
+
+    function dislikePost() {
+      dislikeCount++;
+      document.getElementById("dislikeCount").innerText = dislikeCount;
+    }
+  </script>
+
+</body>
+</html>
